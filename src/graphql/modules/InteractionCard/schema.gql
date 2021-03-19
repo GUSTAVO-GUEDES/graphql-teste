@@ -1,0 +1,23 @@
+type InteractionCard {
+    _id:ID!
+    name:String
+    usersJoin:[User!]!
+    active:Boolean
+}
+
+input InteractionCardInput {
+    name:String
+    usersJoin:[ID!]!
+    active:Boolean
+}
+
+type Query {
+    InteractionCards: [InteractionCard!]!
+    getInteractionCardsByUserId(id: ID!): [InteractionCard!]! 
+}
+
+type Mutation {
+    createInteractionCard(data: InteractionCardInput!): InteractionCard!
+    updateInteractionCard(id: ID!, data: InteractionCardInput!): InteractionCard!
+    deleteInteractionCard(id: ID!): Boolean!
+}

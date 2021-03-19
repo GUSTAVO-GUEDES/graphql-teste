@@ -1,18 +1,18 @@
 type Message {
     _id:ID!
     user:User!
-    TalkGroup:TalkGroup!
+    InteractionCard:InteractionCard!
     message:String!
 }
 
 input MessageInput {
     user:ID!
-    TalkGroup:ID!
+    InteractionCard:ID!
     message:String!
 }
 
 type Query {
-    getMessagesByTalkGroupId(id: ID!): [Message!]!
+    getMessagesByInteractionCardId(id: ID!): [Message!]!
 }
 
 type Mutation {

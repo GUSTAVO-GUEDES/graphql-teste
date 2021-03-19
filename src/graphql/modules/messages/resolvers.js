@@ -2,7 +2,7 @@ import Message from '../../../models/Message';
 
 export default {
     Query: {
-        getMessagesByTalkGroupId: (_, { id }) => Message.find({TalkGroup: id})
+        getMessagesByInteractionCardId: (_, { id }) => Message.find({InteractionCard: id})
     },
     Mutation: {
         createMessage: (_, { data }) => Message.create(data),

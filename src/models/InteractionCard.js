@@ -21,4 +21,4 @@ const Schema = new mongoose.Schema(
   }
 );
 
-export default mongoose.model('TalkGroup', Schema);
+export default mongoose.model('InteractionCard', Schema);

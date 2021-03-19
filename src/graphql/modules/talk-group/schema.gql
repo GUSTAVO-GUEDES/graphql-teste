@@ -1,0 +1,23 @@
+type TalkGroup {
+    _id:ID!
+    name:String
+    usersJoin:[User!]!
+    active:Boolean
+}
+
+input TalkGroupInput {
+    name:String
+    usersJoin:[ID!]!
+    active:Boolean
+}
+
+type Query {
+    TalkGroups: [TalkGroup!]!
+    getTalkGroupsByUserId(id: ID!): [TalkGroup!]!
+}
+
+type Mutation {
+    createTalkGroup(data: TalkGroupInput!): TalkGroup!
+    updateTalkGroup(id: ID!, data: TalkGroupInput!): TalkGroup!
+    deleteTalkGroup(id: ID!): Boolean!
+}

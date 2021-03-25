@@ -1,7 +1,7 @@
 type Message {
     _id:ID!
-    user:User!
-    InteractionCard:InteractionCard!
+    user:ID!
+    InteractionCard:ID!
     message:String!
 }
 

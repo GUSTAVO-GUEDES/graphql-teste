@@ -1,12 +1,12 @@
-import Message from '../../../models/Message';
+import MessageController  from './controller';
 
 export default {
     Query: {
-        getMessagesByInteractionCardId: (_, { id }) => Message.find({InteractionCard: id})
+        getMessagesByInteractionCardId: (_, { id }) => MessageController.getMessagesByInteractionCardId(id)
     },
     Mutation: {
-        createMessage: (_, { data }) => Message.create(data),
-        updateMessage: (_, { id, data }) => Message.findOneAndUpdate(id, data, { new: true }),
-        deleteMessage: async (_, { id }) => !!(await Message.findOneAndDelete(id))
+        createMessage: (_, { data }) => MessageController.createMessage(data),
+        updateMessage: (_, { id, data }) => MessageController.updateMessage(id, data),
+        deleteMessage: async (_, { id }) => await MessageController.deleteMessage(id)
     }
 };

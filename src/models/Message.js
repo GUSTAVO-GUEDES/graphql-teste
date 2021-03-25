@@ -7,7 +7,7 @@ const Schema = new mongoose.Schema(
       ref: 'User',
       required: true
     },
-    TalkGroup: { 
+    InteractionCard: { 
       type: mongoose.Schema.Types.ObjectId,
       ref: 'TalkGroup',
       required: true

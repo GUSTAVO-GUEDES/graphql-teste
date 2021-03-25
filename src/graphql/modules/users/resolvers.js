@@ -1,14 +1,14 @@
-import User from '../../../models/User';
+import UserController from './controller';
 
 export default {
     Query: {
-        users: () => User.find(),
-        getUserById: (_, { id }) => User.findById(id),
-        getUserByEmail: (_, { email }) => User.findOne({ email: email })
+        users: () => UserController.users(),
+        getUserById: (_, { id }) => UserController.getUserById(id),
+        getUserByEmail: (_, { email }) => UserController.getUserByEmail(email)
     },
     Mutation: {
-        createUser: (_, { data }) => User.create(data),
-        updateUser: (_, { id, data }) => User.findOneAndUpdate(id, data, { new: true }),
-        deleteUser: async (_, { id }) => !!(await User.findOneAndDelete(id))
+        createUser: (_, { data }) => UserController.createUser(data),
+        updateUser: (_, { id, data }) => UserController.updateUser(id, data),
+        deleteUser: async (_, { id }) => await UserController.deleteUser(id)
     }
 };

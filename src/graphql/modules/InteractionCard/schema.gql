@@ -1,14 +1,19 @@
 type InteractionCard {
     _id:ID!
     name:String
-    usersJoin:[User!]!
+    usersJoin:[UserData!]!
     active:Boolean
 }
 
 input InteractionCardInput {
     name:String
-    usersJoin:[ID!]!
+    usersJoin:[String!]!
     active:Boolean
+}
+
+type UserData{
+    _id:ID!
+    name:String!
 }
 
 type Query {

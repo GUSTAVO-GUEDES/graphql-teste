@@ -5,3 +5,9 @@ export async function ReturnUsersData(usersIDs){
         return await User.findById(userId);
     });
 };
+
+export async function ReturnUsersBasicData(usersIDs){
+    return await usersIDs.map(async (userId) => {
+        return await User.findOne({_id: userId}, { name:1 });
+    });
+};
